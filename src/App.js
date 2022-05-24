@@ -40,28 +40,30 @@ function App() {
         </div>
 
       </header>
-      <main>
-        <div className="wrapper timer">
-          <div>
-            <div className="section">
-              <div className="time">{days}</div>
-              <div className="label">Days</div>
-            </div>
-            <div className="section">
-              <div className="time">{hours}</div>
-              <div className="label">Hours</div>
-            </div>
-            <div className="section">
-              <div className="time">{minutes}</div>
-              <div className="label">Minutes</div>
-            </div>
-            <div className="section">
-              <div className="time">{seconds}</div>
-              <div className="label">Seconds</div>
+      { !!days && (
+        <main>
+          <div className="wrapper timer">
+            <div>
+              <div className="section">
+                <div className="time">{days}</div>
+                <div className="label">Days</div>
+              </div>
+              <div className="section">
+                <div className="time">{hours}</div>
+                <div className="label">Hours</div>
+              </div>
+              <div className="section">
+                <div className="time">{minutes}</div>
+                <div className="label">Minutes</div>
+              </div>
+              <div className="section">
+                <div className="time">{seconds}</div>
+                <div className="label">Seconds</div>
+              </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+      )}
     </div>
   );
 }
