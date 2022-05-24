@@ -1,0 +1,70 @@
+.App {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px;
+  max-width: 960px;
+}
+
+.App header {
+  text-align: center;
+}
+
+.App header .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App header .image {
+  height: 140px;
+  width: 100px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.App header .image.left  {
+  background-image: url('../public/left.png');
+}
+
+.App header .image.right  {
+  background-image: url('../public/right.png');
+}
+
+.App header h1 {
+  font-size: 32px;
+  color: #EEE;
+}
+.timer > div {
+  justify-content: space-between !important;
+}
+.timer .section {
+  padding: 0 16px 16px 16px;
+  background-color: unset !important;
+}
+
+.timer .section .time {
+  color: #EEE !important;
+}
+
+.timer .section .label {
+  color: #EEE !important;
+  background-color: unset !important;
+}
+
+@media screen and (max-width: 560px) {
+  .timer > div {
+    flex-direction: column;
+  }
+
+  .timer >div .section {
+    margin-bottom: 24px;
+  }
+}
+
