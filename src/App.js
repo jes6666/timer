@@ -11,13 +11,12 @@ function App() {
   useEffect(() => {
     setInterval(() => {
       const today = moment();
-      const threshold = moment('06-15-2022 7:00 PM');
+      const threshold = moment(1655305200000);
 
       setDays(format(threshold.diff(today, 'days')));
       setHours(format(threshold.diff(today, 'hours') % 24));
       setMinutes(format(threshold.diff(today, 'minutes') % 60));
       setSeconds(format(threshold.diff(today, 'seconds') % 60));
-      console.log();
     }, 1000);
   }, [seconds]);
 
@@ -26,7 +25,7 @@ function App() {
       return `0${value}`
     }
 
-    return value;
+    return `${value}`;
   }
 
   return (

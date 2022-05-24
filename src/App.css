@@ -52,6 +52,7 @@
 
 .timer .section .time {
   font-size: 64px;
+  text-align: center;
   color: #EEE !important;
 }
 
