@@ -42,6 +42,7 @@
   color: #EEE;
 }
 .timer > div {
+  display: flex;
   justify-content: space-between !important;
 }
 .timer .section {
@@ -50,10 +51,15 @@
 }
 
 .timer .section .time {
+  font-size: 64px;
   color: #EEE !important;
 }
 
 .timer .section .label {
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  font-weight: 100;
   color: #EEE !important;
   background-color: unset !important;
 }

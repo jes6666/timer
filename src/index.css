@@ -23,9 +23,9 @@ body:after {
 
 #root {
   height: 100vh;
-  /* background-image: url('../public/background.jpeg');
+  background-image: url('../public/background.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative; */
+  position: relative;
 }
