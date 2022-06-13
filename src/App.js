@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     setInterval(() => {
       const today = moment();
-      const threshold = moment(1655305200000);
+      const threshold = moment(1655218800000);
 
       setDays(format(threshold.diff(today, 'days')));
       setHours(format(threshold.diff(today, 'hours') % 24));
