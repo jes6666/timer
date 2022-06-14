@@ -7,18 +7,30 @@ function App() {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
+  const [isOver, setIsOver] = useState(false);
 
   useEffect(() => {
-    setInterval(() => {
-      const today = moment();
-      const threshold = moment(1655218800000);
+    const threshold = moment(1655218800000);
 
-      setDays(format(threshold.diff(today, 'days')));
-      setHours(format(threshold.diff(today, 'hours') % 24));
-      setMinutes(format(threshold.diff(today, 'minutes') % 60));
-      setSeconds(format(threshold.diff(today, 'seconds') % 60));
+    setInterval(() => {
+      const todayMs = moment().valueOf();
+
+      setDays(format(threshold.diff(todayMs, 'days')));
+      setHours(format(threshold.diff(todayMs, 'hours') % 24));
+      setMinutes(format(threshold.diff(todayMs, 'minutes') % 60));
+      setSeconds(format(threshold.diff(todayMs, 'seconds') % 60));
     }, 1000);
-  }, [seconds]);
+  }, []);
+
+  useEffect(() => {
+    const threshold = moment(1655218800000);
+    const todayMs = moment().valueOf();
+    const thresholdMs = threshold.valueOf();
+
+    if (todayMs > thresholdMs) {
+      setIsOver(true);
+    }
+  }, [seconds])
 
   const format = (value) => {
     if (value.toString().length < 2) {
@@ -32,15 +44,24 @@ function App() {
     <div className="App">
       <header>
         <div className="wrapper">
-          <div className="title">
-            <div className="image left"></div>
-            <h1>It's almost over!</h1>
-            <div className="image right"></div>
-          </div>
+          {isOver && (
+            <div className="title">
+              <div className="image left animated"></div>
+              <h1>It's over!</h1>
+              <div className="image right animated"></div>
+            </div>
+          )}
+          {!isOver && (
+            <div className="title">
+              <div className="image left"></div>
+              <h1>It's almost over!</h1>
+              <div className="image right"></div>
+            </div>
+          )}
         </div>
 
       </header>
-      { !!days && (
+      {!!days && !isOver && (
         <main>
           <div className="wrapper timer">
             <div>
